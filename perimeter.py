@@ -1,7 +1,6 @@
-# madlib.py
-#
-adjective = input("Enter an adjective: ")
-noun = input("Enter an noun: ")
-verb = input("Enter an verb: ")
-adverb = input("Enter an adverb: ")
-print("A", adjective, noun,"should never", verb, adverb)
+length = float(input("Length of rectangle: "))
+width = float(input("Width of rectangle: "))
+perimeter = 2 * (length + width)
+
+print("")
+print("The perimeter of a ", length, " x ", width, " rectangle is ", perimeter)
