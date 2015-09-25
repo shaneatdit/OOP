@@ -1,9 +1,13 @@
+
+# get user to input values
 coverprice = float(input("Enter cover price: "))
 d = float(input("Enter discount rate: "))
 discount = 1 - d / 100
 quantity = int(input("Enter quantity: "))
 shipping = 2.25 + 0.75 * quantity
 cost = (quantity * coverprice * discount) + shipping
+
+#print breakdown of costs
 print("")
 print(quantity, "books at ", coverprice, "per book:   ", coverprice * quantity)
 print("Discount (", d, "%):            ", quantity * coverprice * d / 100)
