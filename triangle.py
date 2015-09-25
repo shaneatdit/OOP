@@ -17,6 +17,6 @@ while o <= 0:
 # calculate hypotenuse length
 h = (a ** 2 + o ** 2) ** 0.5
 
-# pint answer
+# print answer
 print("")
 print("The hypotenuse of right-angle triangle with sides ", a, "and", o, "is", h)
