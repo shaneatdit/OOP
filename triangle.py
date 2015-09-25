@@ -1,6 +1,6 @@
 __author__ = 'D15124888'
 
-# Get user to input posiive values for a and o
+# Get user to input positive values for a and o
 a = 0
 while a <= 0:
     a = float(input("Length of adjacent side: "))
