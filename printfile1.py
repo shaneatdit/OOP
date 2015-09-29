@@ -3,7 +3,7 @@
 # printfile1.py                                                          #
 #   by Shane                                                             #
 #                                                                        #
-# Prints a file using a file for loop                                    #
+# Prints a file using the .read() method                                 #
 # (prints single-spaced)                                                 #
 #                                                                        #
 ##########################################################################
