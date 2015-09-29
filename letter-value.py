@@ -43,13 +43,14 @@ def find_max_word(file):
             max_length = word_value(word)
         elif word_value(word) == max_length:
             max_word.append(word)
-    return max_word
+    return max_word, max_length
 
 
 def main():
     file = input("Enter filename: ")
     # file = "c.txt"
+    max_word, max_length = find_max_word(file)
     print()
-    print(find_max_word(file))
+    print("The word with the greatest letter value is", max_word, "with a letter value of", max_length)
 
 main()
