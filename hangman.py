@@ -10,6 +10,20 @@ from random import randint
 
 DICTIONARY = "dictionary.txt"
 LIVES = 6
+GALLOWS = {6: [" _________     ", "|         |    ", "|              ", "|             ",
+                "|             ", "|              ", "|              ", "|_________     "],
+            5: [" _________     ", "|         |    ", "|         0    ", "|             ",
+                "|             ", "|              ", "|              ", "|_________     "],
+            4: [" _________     ", "|         |    ", "|         0    ", "|         |   ",
+                "|             ", "|              ", "|              ", "|_________     "],
+            3: [" _________     ", "|         |    ", "|         0    ", "|        /|   ",
+                "|             ", "|              ", "|              ", "|_________     "],
+            2: [" _________     ", "|         |    ", "|         0    ", "|        /|\\  ",
+                "|             ", "|              ", "|              ", "|_________     "],
+            1: [" _________     ", "|         |    ", "|         0    ", "|        /|\\  ",
+                "|        /    ", "|              ", "|              ", "|_________     "],
+            0: [" _________     ", "|         |    ", "|         0    ", "|        /|\\  ",
+                "|        / \\  ", "|              ", "|              ", "|_________     "]}
 
 
 def wordlist(file):
@@ -24,6 +38,13 @@ def select_random_word(word_list):
         rand = randint(0, len(word_list) - 1)
         if word_list[rand].isalpha():
             return word_list[rand]
+
+
+def print_gallows(lives):
+    gallows = GALLOWS[lives]
+    for i in gallows:
+        print(i)
+    print()
 
 
 def game_board(word, correct):
@@ -46,12 +67,7 @@ def hangman():
     correct = []
     print()
     print()
-    print()
-    print()
-    print()
     print("H * A * N * G * M * A * N")
-    print()
-    print()
 
     # Randomly select a word from the dictionary and generate game board
     answer = select_random_word(wordlist(DICTIONARY))
@@ -62,7 +78,8 @@ def hangman():
 
         # print game board and current status
         print()
-        print("     ", board)
+        print_gallows(lives)
+        print(board)
         print()
         print("Incorrect guesses: ", end="")
         print(", ".join(incorrect))
@@ -72,7 +89,7 @@ def hangman():
         # Prompt player for a valid guess
         while True:
             guess = input("Guess a letter: ").lower()
-            if guess not in guessed and guess.isalpha():
+            if guess not in guessed and guess.isalpha() and len(guess) == 1:
                 break
             elif guess in guessed:
                 print()
